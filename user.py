@@ -55,8 +55,8 @@ class User:
          
     #displaying user
     def display_user(cls):
-    """"
+     """
       A function that displays the user
-      """
-      return cls.user_details()
+     """
+    return cls.user_details()
     
