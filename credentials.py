@@ -12,7 +12,7 @@ class Credentials:
    self.info= info
    self.info_password= info_password
    
-   #finding info
+   #finding info#method
   def find_info(cls,info):
      """
      Find info by the name entered
@@ -24,10 +24,16 @@ class Credentials:
      if credentials.info= info
      return info
      
-     #saving info
+     #saving info#function
      def save_info(self):
        """
        A function that saves the app's information
        """
-       Credentials.info-info_details.append(self)
+       Credentials.info_details.append(self)
+       
+       #deleting info#function
+       """
+       A function that deletes the app's information
+       """
+       Credentials.info_details.remove(self)
        
