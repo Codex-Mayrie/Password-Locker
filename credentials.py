@@ -24,3 +24,10 @@ class Credentials:
      if credentials.info= info
      return info
      
+     #saving info
+     def save_info(self):
+       """
+       A function that saves the app's information
+       """
+       Credentials.info-info_details.append(self)
+       
