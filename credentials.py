@@ -6,13 +6,14 @@ class Credentials:
   This is a class that creates new instances of user credentials
    """
   
-  info_deatils= []
+  info_details= []
   
   def __init__(self, info, info_password):
    self.info= info
    self.info_password= info_password
    
    #finding info#method
+   @class method
   def find_info(cls,info):
      """
      Find info by the name entered
@@ -38,7 +39,8 @@ class Credentials:
        """
        Credentials.info_details.remove(self)
        
-      #checking if the user exists
+      #checking if the app's info exists
+      @class method
     def info_exists(cls,info):
       """
       A method that checks whether the info exists
@@ -51,4 +53,11 @@ class Credentials:
           if credentials.info ==info:
            return true
            return false 
+         
+         #display app's information
+    def display_info(cls, info):
+      """
+      A method that displays the app's information
+      """
+      return cls.info_details()
        
