@@ -40,5 +40,23 @@ class User:
       return user
     
     #checking if the user exists
-    def test_user_exists
+    def user_exists(cls, first_name):
+      """
+      A method that checks whether the user exists
+      Args:
+        user:checks whether the user exists using the first name
+        returns:
+        A boolean if the user is found using the first name
+        """
+      for user in cls.user_details:
+          if user.first_name == first_name:
+           return true
+           return false
+         
+    #displaying user
+    def display_user(cls):
+    """"
+      A function that displays the user
+      """
+      return cls.user_details()
     
