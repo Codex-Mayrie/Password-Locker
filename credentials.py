@@ -25,15 +25,30 @@ class Credentials:
      return info
      
      #saving info#function
-     def save_info(self):
+  def save_info(self):
        """
-       A function that saves the app's information
+        A function that saves the app's information
        """
-       Credentials.info_details.append(self)
+      Credentials.info_details.append(self)
        
-       #deleting info#function
+    #deleting info#function
+    def delete_info(self):
        """
        A function that deletes the app's information
        """
        Credentials.info_details.remove(self)
+       
+      #checking if the user exists
+    def info_exists(cls,info):
+      """
+      A method that checks whether the info exists
+      Args:
+        info:checks whether the info exists
+        returns:
+        A boolean if the app's info is found
+        """
+      for credentials in cls.info_details:
+          if credentials.info ==info:
+           return true
+           return false 
        
