@@ -13,17 +13,16 @@ class Credentials:
    self.info_password= info_password
    
    #finding info#method
-   @class method
-  def find_info(cls,info):
+ def find_info(cls,info):
      """
      Find info by the name entered
      arg:
      info:the name of the info entered
      return:the name of the info entered
      """
-     for credentials in cls.info_details
-     if credentials.info= info
-     return info
+     for credentials in cls.info_details:
+      if credentials.info == info:
+       return info
      
      #saving info#function
   def save_info(self):
@@ -33,15 +32,14 @@ class Credentials:
       Credentials.info_details.append(self)
        
     #deleting info#function
-    def delete_info(self):
+  def delete_info(self):
        """
        A function that deletes the app's information
        """
        Credentials.info_details.remove(self)
        
       #checking if the app's info exists
-      @class method
-    def info_exists(cls,info):
+  def info_exists(cls,info):
       """
       A method that checks whether the info exists
       Args:
