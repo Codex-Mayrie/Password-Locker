@@ -28,14 +28,14 @@ class Credentials:
         
       return credentials
      
-     #saving info#function
+     #saving info
   def save_info(self):
     """
     A function that saves the app's information
     """
     Credentials.info_details.append(self)
     
-    #deleting info#function
+    #deleting info
   def delete_info(self):
     """
     A function that deletes the app's information
