@@ -84,7 +84,7 @@ class TestUser(unittest.TestCase):
       """
       self.assertEqual(User.display_user(), User.user_details)
       
-      
+    #A test that copies credentials on the clipboard  
    def test_copy_credentials(self):
       """
       Method that tests whether a user can copy credentials on the clipboard
