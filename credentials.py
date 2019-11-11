@@ -14,7 +14,8 @@ class Credentials:
     self.info_password= info_password
     self.first_name = first_name
    
-   #finding info#method
+   #finding info
+  @classmethod
   def find_info(cls,account_name):
     """
     Find info by the name entered
