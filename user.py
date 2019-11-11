@@ -1,3 +1,5 @@
+import pyperclip
+
 class User:
   """
   This is a User class that creates new instances of other users
