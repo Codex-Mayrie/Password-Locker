@@ -26,37 +26,25 @@ class User:
     self.user_details.remove(self)
      
   #finding user by firstname
-    @classmethod
-    def find_by_firstname(cls,first_name):
+  @classmethod
+  def find_by_first_name(cls,first_name):
      """  
-    A method that finds the user using their first name
-     Args:
-    user: user to search for 
-    returns:
-    Name of the user searched for
-     """
-    for user in cls.user_details:
-     if user.first_name == first_name:
-      return user
-    
-    #checking if the user exists
-    def user_exists(cls, first_name):
-      """
-      A method that checks whether the user exists
+      A method that finds the user using their first name
       Args:
-        user:checks whether the user exists using the first name
-        returns:
-        A boolean if the user is found using the first name
-        """
-      for user in cls.user_details:
-          if user.first_name == first_name:
-           return true
-           return false
+      user: user to search for 
+      returns:
+      Name of the user searched for
+     """
+     for user in cls.user_details:
+      if user.first_name == first_name:
+       return user
          
     #displaying user
-    def display_user(cls):
+  @classmethod
+  def display_user(cls):
+  
      """
       A function that displays the user
      """
-    return cls.user_details()
+     return cls.user_details
     
