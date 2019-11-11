@@ -3,7 +3,7 @@
 Mary Mburu
 
 ## Description
-This project is generated using Python shell where the user can generate password or create an account. The user is prompted to enter details using the shortforms provided.
+This project is generated using Python shell(Command Line Interface) where the user can generate password or create an account. The user is prompted to enter details using the shortforms provided.
 
 ## Date
 11/11/2019
