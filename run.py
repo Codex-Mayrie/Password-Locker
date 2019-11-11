@@ -79,7 +79,7 @@ def main():
             else:
                 print("Sorry I didn\'t get that. Please try again")
             # Create and save new user
-            save_user(create_user(first_name, last_name, phone_number,email,user_name, password))
+            save_user(create_user(first_name, last_name, password))
             print('\n')
             print(f"New Account for {first_name} {last_name} created.")
             print('\n')
@@ -115,12 +115,6 @@ def main():
                                 password = input(
                                     "Enter a password of your choice...")
                                 break
-                            elif password_choice == 'gp':
-                                print(
-                                    "Enter the length of the password you wish to generate eg 9 ")
-                                pass_len = int(input())
-                                password = rand_pass(pass_len)
-                                break
                             elif password_choice == 'ex':
                                 print('See you.....')
                                 break
@@ -129,22 +123,22 @@ def main():
                         save_credentials(create_credentials(first_name,second_name,password))
                         print(' \n')
                         print(
-                            f'Credential Created:\n Account type: {site_name}  \n Account Username: {user_name} \n Account Password: {password}')
+                            f'Credential Created:\n Account type: {first_name}  \n Account Username: {user_name} \n Account Password: {password}')
                         print('\n ')
                     elif short_code == 'dc':
                         if display_credentials(user_name):
                             print("Here is a list of your credentials:")
                             print('\n')
                             for credential in display_credentials(user_name):
-                                print(f"Credential Created:\n Account type: {site_name} \n Account Username: {user_name} \n Account Password: {password}")
+                                print(f"Credential Created:\n Account type: {first_name} \n Account Username: {user_name} \n Account Password: {password}")
                         else:
                             print("You don\'t have any credentials yet")
                     elif short_code == "sc":
                         print("Enter the Account Name you want to search for")
-                        site_name = input().lower()
-                        if find_by_site_name(site_name):
-                            search_credential = find_by_site_name(site_name)
-                            print(f"Account Name : {search_credential.site_name}")
+                        first_name = input().lower()
+                        if find_by_first_name(first_name):
+                            search_credential = find_by_first_name(first_name)
+                            print(f"Account Name : {search_credential.first_name}")
                             print('-' * 50)
                             print(f"User Name: {search_credential.username} Password :{search_credential.password}")
                             print('-' * 50)
@@ -153,9 +147,9 @@ def main():
                             print('\n')
                     elif short_code == 'rm':
                         print("Enter the account type of the credential you wish to delete:...")
-                        site_name = input()
-                        if find_by_site_name(site_name):
-                            credential_to_delete = find_by_site_name(site_name)
+                        first_name = input()
+                        if find_by_first_name(first_name):
+                            credential_to_delete = find_by_first_name(first_name)
                             print("_"*50)
                             credential_to_delete.delete_credentials()
                             print('\n')
@@ -164,22 +158,22 @@ def main():
                             print(" We couldin\'t find the credentials associated with the account name you typed.")
                     elif short_code == "copy":
                         print(' \n')
-                        site_name = input(
-                            'Enter the site name for the credential password to copy: ')
-                        if find_by_site_name(site_name):
-                            credential_to_copy = find_by_site_name(site_name)
+                        first_name = input(
+                            'Enter the first name for the credential password to copy: ')
+                        if find_by_first_name(first_name):
+                            credential_to_copy = find_by_first_name(first_name)
                             print("_"*50)
-                            credential_to_copy.copy_credentials(site_name)
+                            credential_to_copy.copy_credentials(first_name)
                             print('\n')
                             print("Credential successfully copied")
                     elif short_code == "ex":
-                         print('Goodbye.....')
+                         print('See you.....')
                          break
                     else:
                         print("I didn\'t get that, please try again")
             else:
                 print(
-                    f"Sorry, we couldn\'t' find any account under the name {user_name}")
+                    f"Sorry, we couldn\'t' find any account under the name {first_name}")
                 print('\n')
         elif short_code == 'ex':
             print('See you...')
