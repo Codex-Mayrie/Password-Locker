@@ -155,7 +155,7 @@ def main():
                             print('\n')
                             print("Credential successfully deleted!")
                         else:
-                            print(" We couldin\'t find the credentials associated with the account name you typed.")
+                            print(" We couldn\'t find the credentials associated with the account name you typed.")
                     elif short_code == "copy":
                         print(' \n')
                         first_name = input(
