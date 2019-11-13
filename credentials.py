@@ -28,21 +28,28 @@ class Credentials:
         
       return credentials
      
-     #saving info
-  def save_info(self):
+  #generating password
+  def generate_password(self):
+    char = string.ascii_uppercase + string.ascii_lowercase
+    generate_password= ''.join(random.choice(char) for i in range(0,))
+    return generate_password
+  
+  #saving user
+  def save_credential(self):
     """
-    A function that saves the app's information
+    A save method that saves the details of the user
     """
     Credentials.info_details.append(self)
+  
     
-    #deleting info
+  #deleting info
   def delete_info(self):
     """
     A function that deletes the app's information
     """
     Credentials.info_details.remove(self)
     
-    #checking if the app's info exists
+  #checking if the app's info exists
   def info_exists(cls,account_name):
     """
     A method that checks whether the info exists
@@ -57,8 +64,9 @@ class Credentials:
            
         return false 
   
-    #display app's information
-  def display_info(cls, account_name):
+  
+  @classmethod  #display app's information
+  def display_info(cls):
     """
     A method that displays the app's information
     """
@@ -67,7 +75,7 @@ class Credentials:
   
   
   @classmethod
-  def find_by_first_name(cls,first_name):
+  def find_by_user_name(cls,first_name):
      """  
       A method that finds the user using their first name
       Args:

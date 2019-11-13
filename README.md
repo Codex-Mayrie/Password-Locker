@@ -1,4 +1,4 @@
-## Quotes
+## Password-Locker
 ## Author
 Mary Mburu
 
@@ -18,4 +18,4 @@ https://github.com/shee1998/Password-Locker.
 MIT LICENSE © 2019 Mary Mburu
 
 ## Collaborate
-To contribute on this project, reach me on Email[marywanjikumburu1@gmail.com] or contact me via slack[Shee].
+To contribute on this project, reach me on Email[marywanjikumburu1@gmail.com] or contact me via slack[Mary Mburu].

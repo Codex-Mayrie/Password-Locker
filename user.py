@@ -18,7 +18,7 @@ class User:
     """
     A save method that saves the details of the user
     """
-    self.user_details.append(self)
+    User.user_details.append(self)
     
   #deleting user's account
    
