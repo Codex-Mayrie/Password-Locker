@@ -1,4 +1,6 @@
 ## Password-Locker
+This project is generated using Python version 3.6
+
 ## Author
 Mary Mburu
 

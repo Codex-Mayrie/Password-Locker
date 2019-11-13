@@ -1,5 +1,5 @@
 import pyperclip
-import string
+
 
 class Credentials: 
   """
@@ -28,12 +28,7 @@ class Credentials:
         
       return credentials
      
-  #generating password
-  def generate_password(self):
-    char = string.ascii_uppercase + string.ascii_lowercase
-    generate_password= ''.join(random.choice(char) for i in range(0,))
-    return generate_password
-  
+
   #saving user
   def save_credential(self):
     """
@@ -75,7 +70,7 @@ class Credentials:
   
   
   @classmethod
-  def find_by_user_name(cls,first_name):
+  def find_by__name(cls,first_name):
      """  
       A method that finds the user using their first name
       Args:

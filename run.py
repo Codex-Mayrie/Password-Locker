@@ -2,6 +2,8 @@
 from credentials import Credentials
 import pyperclip
 from user import User
+import string
+import random
 
 def create_user(first_name, second_name, password):
   """
@@ -50,13 +52,12 @@ def find_by_user_name(first_name):
     '''
     return Credentials.find_by_user_name(first_name) 
 
-def gen_password():
-    """
-    Function that generates password
-    """
-    gen_password= Credentials.gen_password()
-    return gen_password
-
+#generating password
+def generate_password():
+    char = string.ascii_uppercase + string.ascii_lowercase
+    generate_password= ''.join(random.choice(char) for i in range(9))
+    return generate_password
+  
 def save_credentials(credentials):
   """
   function that saves credentials
@@ -84,19 +85,9 @@ def main():
             first_name = input()
             print("Enter Last Name ...")
             last_name = input()
-            print("Do you want to input your own password or have one generated for you? Use short codes\n'gp\' to generate password.\n \'cyo\' to choose your own password \n \'ex\' to exit... ")
-            password_choice=input().lower()
-            if password_choice == 'cyo':        
-                password=input("Enter a password of your choice...").strip()    
-            elif password_choice=='gp':
-                print("Enter the length of the password you wish to generate eg 6 ")
-                password=gen_password()
+            print("Enter password")
+            password=input()
             
-            elif password_choice == 'ex':
-                print('See you.........')
-                break
-            else:
-                print("Sorry I didn\'t get that. Please try again")
             save_users(create_user(first_name, last_name, password))
             print('\n')
             print(f"New Account for {first_name} {last_name} created.")
@@ -129,9 +120,17 @@ def main():
                         acc=input()
                         print("Enter Username")
                         usName=input()
-                        print("Enter password")
-                        pasWd=input()
-                            
+                        print("Enter y/n to generate a  password or not.")
+                        enter=input().lower()
+                        if enter=='y':
+                            pasWd=generate_password()
+                            print(f"Your password is {pasWd}")
+                        elif enter=='n':    
+                            print("Enter password")
+                            pasWd=input()
+                        else:
+                            print("Didnt get what you typed.")    
+                                
                         save_credentials(create_credentials(acc,usName,pasWd))
                         print(' \n')
                         print(f"Credential Created: Account type: {acc}  Account Username: {usName}  Account Password: {pasWd}")
@@ -187,6 +186,7 @@ def main():
                 print(
                     f"Sorry, we couldn\'t' find any account under the name {first_name}")
                 print('\n')
+                
         elif short_code == 'ex':
             print('See you...')
             break
