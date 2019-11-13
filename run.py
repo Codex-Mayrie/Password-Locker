@@ -45,10 +45,13 @@ def save_users(user):
   
 def check_user(first_name):
     '''
+    Function that checks user
     '''
     return User.find_by_first_name(first_name) 
+
 def find_by_user_name(first_name):
     '''
+    Function that finds user by first_name
     '''
     return Credentials.find_by_user_name(first_name) 
 
